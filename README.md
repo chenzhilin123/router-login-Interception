@@ -1,6 +1,6 @@
-# test
+# vue-router路由按需加载
 
-> upload to git
+> 懒加载
 
 ## Build Setup
 
