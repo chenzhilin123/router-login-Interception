@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="welcome">
     {{msg}}
     <router-link to="/command">进入Command</router-link>
   </div>

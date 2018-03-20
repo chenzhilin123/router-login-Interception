@@ -1,35 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import welcome from '@/components/component/welcome'
-import menu from './menu'
-Vue.use(Router)
-let menus =[];
-menu.map((x)=>{
-	menus.push({
-		path:x,
-		component:resolve => require([x === '/' ? '@/components/component/welcome' : '@/components/pages' + x],resolve)
-	});
+import Menu from './menu'
+import Command from 'pages/command'
+import Welcome from 'coms/welcome'
+let childs =[];
+Menu.map((path)=>{
+  childs.push({
+    path:path,
+    component:resolve => require(['@/components/component'+path],resolve)
+  })
 });
+console.log(childs);
+Vue.use(Router);
 let routes =[
-	{
-		path:'/',
-		component:resolve => require(['@/components/component/welcome'],resolve),
-		children:menus
-	}
+  {
+    path:'/',
+    redirect:'/command'
+  },
+  {
+    path:'/command',
+    component:resolve => require(['@/components/pages/command'],resolve)
+  },
+  {
+    path:'/welcome',
+    component:resolve => require(['@/components/component/welcome'],resolve)
+  }
 ];
-console.log(menus);
 const router = new Router({
 	mode:'history',
-	base:__dirname,
 	routes
 });
-// export default new Router({
-//   routes: [
-//     {
-//       path: '/',
-//       component: welcome
-//     }
-//   ]
-// })
 export default router;
