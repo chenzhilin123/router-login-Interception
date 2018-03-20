@@ -26,8 +26,8 @@ npm run e2e
 # run all tests
 npm test
 
-# issue
-现在这个路由路径是跳转了,但是还有些问题,页面没有渲染出来.后续更新
+# 修改的地方 2018-03-19
+子路由的配置
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
