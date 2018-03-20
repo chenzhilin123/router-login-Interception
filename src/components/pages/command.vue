@@ -2,6 +2,13 @@
   <div class="hello">
     {{msg}}
     <router-link to="/welcome">欢迎页面</router-link>
+    <div class="sub">
+      <router-link to="/command/chenzhilin/1">子路由1</router-link>
+    </div>
+    <div class="sub">
+      <router-link to="/command/chenzhilin/2">子路由2</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -18,18 +25,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.sub{
+  display: flex;
+  flex:1;
+  height: 30px;
+  background:red;
+  font-size:14px;
+  align-items:center;
+  justify-content:center;
 }
 </style>

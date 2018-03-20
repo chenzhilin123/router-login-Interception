@@ -15,11 +15,17 @@ Vue.use(Router);
 let routes =[
   {
     path:'/',
-    redirect:'/command'
+    redirect:'/command',
   },
   {
     path:'/command',
-    component:resolve => require(['@/components/pages/command'],resolve)
+    component:resolve => require(['@/components/pages/command'],resolve),
+    children:[
+      {
+        path:'chenzhilin/:id',
+        component: resolve => require(['@/components/component/user'],resolve)
+      }
+    ]
   },
   {
     path:'/welcome',
