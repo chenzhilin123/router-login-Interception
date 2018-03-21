@@ -8,17 +8,31 @@
     <div class="sub">
       <router-link to="/command/chenzhilin/2">子路由2</router-link>
     </div>
+    <mu-raised-button label="退出" class="demo-raised-button" primary @click="exits"/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import { getStorages,clearStorages } from 'comJS/localStorage'
 export default {
   name: 'command',
   data () {
     return {
       msg: 'command'
     }
+  },
+  methods:{
+    exits(){
+      clearStorages();
+      this.$Message.success("退出成功");
+      setTimeout(()=>{
+        this.$router.go('/');
+      },2000);
+    }
+  },
+  created(){
+    this.$Message.success("欢迎: "+getStorages("userName"));
   }
 }
 </script>
