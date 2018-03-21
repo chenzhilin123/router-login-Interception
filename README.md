@@ -1,6 +1,6 @@
-# vue-router路由按需加载
+# vue+vue-router+muse-ui+iview
 
-> 懒加载
+> 懒加载=>路由拦截登录DEMO
 
 ## Build Setup
 
@@ -26,8 +26,8 @@ npm run e2e
 # run all tests
 npm test
 
-# 修改的地方 2018-03-19
-子路由的配置
+# 其它 2018-03-19
+其中有个子路由的简单配置在里面
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
